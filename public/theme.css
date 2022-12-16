@@ -1,0 +1,9 @@
+:root {
+  --colors-primaries-first: #0c4a6e;
+  --colors-primaries-second: #6366f1;
+  --colors-secondaries-first: #f97316;
+  --colors-secondaries-second: #f59e0b;
+  --colors-nested-one-two-three-value: #f43f5e;
+  --spacing-sm: 8px;
+  --spacing-md: 24px;
+}

@@ -1,0 +1,8 @@
+/node_modules
+/dist
+.DS_Store
+.next
+.vscode
+.env
+/out
+/coverage
