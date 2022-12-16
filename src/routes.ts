@@ -1,6 +1,5 @@
 const routes = {
   index: '/',
-  users: '/users',
 } as const
 
 type Routes = typeof routes

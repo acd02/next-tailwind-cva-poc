@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "build": "npm run lint:prod && next build",
+    "build": "npm run write-themes && npm run lint:prod && next build",
     "build-static": "npm run lint:prod && next build && next export",
-    "dev": "next",
+    "dev": "npm run write-themes && next",
     "export": "rm -rf .next && npm run build && next export",
     "lint": "eslint --config .eslintrc.js ./src --ext .ts,.tsx,.js --fix",
     "lint:styles": "stylelint --fix \"./src/**/*.module.css\"",
@@ -15,7 +15,8 @@
     "vercel": "vercel --prod",
     "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{ts,tsx}\"",
     "start": "next start",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "write-themes": "ts-node writeThemes.ts"
   },
   "devDependencies": {
     "@swan-io/boxed": "0.12.0",

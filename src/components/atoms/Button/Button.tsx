@@ -5,40 +5,44 @@ type Props = {
   className?: string
 }
 
-const button = cva(['font-semibold', 'border', 'rounded'], {
-  variants: {
-    intent: {
-      primary: [
-        'bg-primaries-first',
-        'text-white',
-        'border-transparent',
-        'hover:bg-primaries-second',
-      ],
-      secondary: [
-        'bg-secondaries-first',
-        'text-gray-200',
-        'border-gray-400',
-        'hover:bg-secondaries-second',
-      ],
+const button = cva(
+  ['font-semibold', 'border', 'rounded', 'hover:transition-colors', 'hover:duration-100'],
+  {
+    variants: {
+      intent: {
+        primary: [
+          'bg-primaries-first',
+          'text-white',
+          'border-transparent',
+          'hover:bg-primaries-second',
+        ],
+        secondary: [
+          'bg-secondaries-first',
+          'text-gray-200',
+          'border-gray-400',
+          'hover:bg-secondaries-second',
+        ],
+      },
+      size: {
+        small: ['text-sm', 'py-sm', 'px-xs'],
+        medium: ['text-base', 'py-sm', 'px-lg'],
+        large: ['text-lg', 'py-lg', 'px-xl'],
+      },
     },
-    size: {
-      small: ['text-sm', 'py-1', 'px-2'],
-      medium: ['text-base', 'py-2', 'px-4'],
-    },
-  },
-  compoundVariants: [
-    {
+    // compoundVariants: [
+    //   {
+    //     intent: 'primary',
+    //     size: 'medium',
+    //   },
+    // ],
+    defaultVariants: {
       intent: 'primary',
-      size: 'medium',
+      size: 'small',
     },
-  ],
-  defaultVariants: {
-    intent: 'primary',
-    size: 'medium',
-  },
-})
+  }
+)
 
-type CVAProps = VariantProps<typeof button>
+type CVAProps = VariantProps<typeof button> // & { intent: string } <- to mark a prop as required
 
 function Button({
   className,

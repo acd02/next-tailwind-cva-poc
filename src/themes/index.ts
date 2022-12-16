@@ -1,17 +1,14 @@
-import { objectKeys } from 'utils/object'
-
 import type { Theme, ThemeValue } from './types'
-import { flattenTheme } from './utils'
 
 const defaultTheme: Theme = {
   colors: {
     primaries: {
       first: '#3b82f6',
-      second: '#6366f1',
+      second: '#60a5fa',
     },
     secondaries: {
       first: '#f97316',
-      second: '#f59e0b',
+      second: '#fb923c',
     },
     nested: {
       one: {
@@ -24,20 +21,23 @@ const defaultTheme: Theme = {
     },
   },
   spacing: {
-    sm: '8px',
-    md: '24px',
+    xs: '0.5rem',
+    sm: '0.75rem',
+    md: '1rem',
+    lg: '1.1rem',
+    xl: '1.2rem',
   },
 }
 
 const otherTheme: Theme = {
   colors: {
     primaries: {
-      first: '#059669',
-      second: '#0d9488',
+      first: '#22c55e',
+      second: '#4ade80',
     },
     secondaries: {
-      first: '#4338ca',
-      second: '#7e22ce',
+      first: '#8b5cf6',
+      second: '#a78bfa',
     },
     nested: {
       one: {
@@ -50,8 +50,11 @@ const otherTheme: Theme = {
     },
   },
   spacing: {
-    sm: '18px',
-    md: '64px',
+    xs: '0.625rem',
+    sm: '0.875rem',
+    md: '1.25rem',
+    lg: '1.5rem',
+    xl: '1.75rem',
   },
 }
 
@@ -60,16 +63,5 @@ const themes: Record<ThemeValue, Theme> = {
   other: otherTheme,
 }
 
-function applyTheme(theme: keyof typeof themes) {
-  const themeObject = flattenTheme(themes[theme])
-  const root = document.documentElement
-
-  objectKeys(themeObject).forEach(property => {
-    if (property === 'name') return
-
-    root.style.setProperty(property, themeObject[property] as string)
-  })
-}
-
-export { applyTheme }
+export { themes }
 export type { Theme, ThemeValue }

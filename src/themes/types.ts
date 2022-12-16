@@ -1,7 +1,10 @@
 export type Theme = {
   spacing: {
+    xs: string
     sm: string
     md: string
+    lg: string
+    xl: string
   }
   colors: {
     primaries: {

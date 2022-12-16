@@ -1,9 +1,1 @@
-:root {
-  --colors-primaries-first: #0c4a6e;
-  --colors-primaries-second: #6366f1;
-  --colors-secondaries-first: #f97316;
-  --colors-secondaries-second: #f59e0b;
-  --colors-nested-one-two-three-value: #f43f5e;
-  --spacing-sm: 8px;
-  --spacing-md: 24px;
-}
+@layer base { :root { --colors-primaries-first:#3b82f6;--colors-primaries-second:#60a5fa;--colors-secondaries-first:#f97316;--colors-secondaries-second:#fb923c;--colors-nested-one-two-three-value:#f43f5e;--spacing-xs:0.5rem;--spacing-sm:0.75rem;--spacing-md:1rem;--spacing-lg:1.1rem;--spacing-xl:1.2rem } .other { --colors-primaries-first:#22c55e;--colors-primaries-second:#4ade80;--colors-secondaries-first:#8b5cf6;--colors-secondaries-second:#a78bfa;--colors-nested-one-two-three-value:#f43f5e;--spacing-xs:0.625rem;--spacing-sm:0.875rem;--spacing-md:1.25rem;--spacing-lg:1.5rem;--spacing-xl:1.75rem } }
