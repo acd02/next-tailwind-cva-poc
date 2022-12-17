@@ -23,8 +23,8 @@ function flattenTheme(theme: Theme, className: string): FlattenedTheme {
   function flatten(obj: Theme, path?: string) {
     objectEntries(obj).forEach(([key, value]) => {
       if (value !== null && typeof value === 'object') {
-        const pt = path ? `--${path}-${key}` : `--${key}`
-        flatten(value as unknown as Theme, pt.replace(/-{3,}/, '--'))
+        const formattedPath = path ? `--${path}-${key}` : `--${key}`
+        flatten(value as unknown as Theme, formattedPath.replace(/-{3,}/, '--'))
 
         return
       }

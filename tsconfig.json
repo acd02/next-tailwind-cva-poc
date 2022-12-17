@@ -1,17 +1,10 @@
 {
   "ts-node": {
-    // It is faster to skip typechecking.
-    // Remove if you want ts-node to do typechecking.
     "transpileOnly": true,
-
     "files": true,
-
     "compilerOptions": {
       "target": "es5",
       "module": "commonjs"
-      // compilerOptions specified here will override those declared below,
-      // but *only* in ts-node.  Useful if you want ts-node and tsc to use
-      // different options with a single tsconfig.json.
     }
   },
   "compilerOptions": {
@@ -49,12 +42,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "computeTheme.mts",
-    "compute.cts",
-    "src/compute.mts"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
