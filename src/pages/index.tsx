@@ -1,26 +1,46 @@
 import { Button } from 'components/atoms/Button'
 import { MainLayout } from 'components/layouts/Main'
 import type { NextPageWithLayout } from 'global-next'
+import type { PropsWithChildren } from 'react'
 
 function Home() {
   return (
-    <div className="mx-auto grid max-w-5xl justify-center gap-y-5">
-      <div className="flex items-center gap-md">
-        <Button>a small button</Button>
-        <Button size="medium">a medium button</Button>
-        <Button size="large">a large button</Button>
-      </div>
-      <div className=" flex items-center gap-md">
-        <Button intent="secondary">a small button</Button>
+    <div className="mx-auto grid max-w-5xl justify-center gap-y-10">
+      <Components.Section label="Primary buttons:">
+        <Button>small button</Button>
+        <Button size="medium">medium button</Button>
+        <Button size="large">large button</Button>
+      </Components.Section>
+
+      <Components.Section label="Secondary buttons:">
+        <Button intent="secondary">small button</Button>
         <Button intent="secondary" size="medium">
-          a medium button
+          medium button
         </Button>
         <Button intent="secondary" size="large">
-          a large button
+          large button
         </Button>
-      </div>
+      </Components.Section>
+
+      <Components.Section label="Disabled buttons:">
+        <Button size="small" disabled>
+          small primary
+        </Button>
+        <Button disabled intent="secondary" size="medium">
+          medium secondary
+        </Button>
+      </Components.Section>
     </div>
   )
+}
+
+const Components = {
+  Section: ({ children, label }: PropsWithChildren<{ label: string }>) => (
+    <div>
+      <p className="text-2xl font-bold text-gray-600">{label}</p>
+      <div className="flex items-end gap-md">{children}</div>
+    </div>
+  ),
 }
 
 ;(Home as NextPageWithLayout<unknown>).getLayout = page => (

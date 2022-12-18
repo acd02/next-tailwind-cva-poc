@@ -18,7 +18,7 @@ function NavContent() {
       <div className="mx-auto max-w-xs">
         <label
           htmlFor="theme"
-          className="block text-left text-sm font-medium text-gray-700"
+          className="block text-left text-sm font-bold text-gray-700"
         >
           Switch theme
         </label>
