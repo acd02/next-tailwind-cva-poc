@@ -37,7 +37,7 @@ function NavContent() {
           id="theme"
           defaultValue="default"
           className={cx([
-            'mt-1 block w-full appearance-none rounded-md border border-gray-300 pl-3 pr-10 text-base sm:text-sm',
+            'mt-1 block w-full appearance-none rounded-md border border-gray-300 bg-main-bg pl-3 pr-10 text-base text-main-text sm:text-sm',
             'bg-down-arrow bg-[size:1.5rem_1.5rem] bg-[position:right_0.5rem_center] bg-no-repeat py-2',
             'focus:border-indigo-500 focus:outline-none focus:ring-indigo-500',
           ])}
