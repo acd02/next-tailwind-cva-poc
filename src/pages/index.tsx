@@ -1,4 +1,5 @@
 import { Button } from 'components/atoms/Button'
+import { Select } from 'components/atoms/Select'
 import { MainLayout } from 'components/layouts/Main'
 import type { NextPageWithLayout } from 'global-next'
 import type { PropsWithChildren } from 'react'
@@ -29,6 +30,39 @@ function Home() {
         <Button disabled intent="secondary" size="medium">
           medium secondary
         </Button>
+      </Components.Section>
+
+      <Components.Section label="Select:">
+        <Select defaultValue="blueberry">
+          <Select.Trigger ariaLabel="Food" />
+          <Select.Content>
+            <Select.Group>
+              {['Apple', 'Banana', 'Blueberry', 'Strawberry', 'Grapes'].map(
+                (fruit, i) => (
+                  <Select.Item
+                    disabled={fruit === 'Grapes'}
+                    key={`${fruit}-${i}`}
+                    value={fruit.toLowerCase()}
+                  >
+                    {fruit}
+                  </Select.Item>
+                )
+              )}
+            </Select.Group>
+            <Select.Separator />
+            <Select.Group>
+              {['A', 'B', 'C', 'D', 'E'].map((letter, i) => (
+                <Select.Item
+                  disabled={letter === 'E'}
+                  key={`${letter}-${i}`}
+                  value={letter.toLowerCase()}
+                >
+                  {letter}
+                </Select.Item>
+              ))}
+            </Select.Group>
+          </Select.Content>
+        </Select>
       </Components.Section>
     </div>
   )
