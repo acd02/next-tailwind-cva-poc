@@ -95,7 +95,7 @@ module.exports = {
     complexity: [1, 5],
     curly: [1, 'multi', 'consistent'],
     'max-lines': [1, { max: 150, skipBlankLines: true, skipComments: true }],
-    'max-lines-per-function': [1, { max: 50, skipBlankLines: true, skipComments: true }],
+    'max-lines-per-function': [1, { max: 100, skipBlankLines: true, skipComments: true }],
     'max-depth': [2, 2],
     'max-nested-callbacks': [1, 2],
     'newline-before-return': 1,
