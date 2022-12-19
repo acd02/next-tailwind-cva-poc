@@ -11,4 +11,6 @@
 
 ## Features:
 
-- Styles: [Tailwind](https://tailwindcss.com/)
+### Styles: 
+- [Tailwind](https://tailwindcss.com/)
+- [CVA](https://github.com/joe-bell/cva)
