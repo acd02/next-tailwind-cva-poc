@@ -1,9 +1,47 @@
-import type { Theme, ThemeValue } from './types'
+import type { Theme } from './types'
 
 const defaultTheme: Theme = {
   colors: {
+    main: {
+      bg: 'white',
+      text: '#1f2937',
+    },
     primaries: {
-      first: '#3b82f6',
+      first: '#93c5fd',
+      second: '#bfdbfe',
+    },
+    secondaries: {
+      first: '#fdba74',
+      second: '#fed7aa',
+    },
+    nested: {
+      one: {
+        two: {
+          three: {
+            value: '#f43f5e',
+          },
+        },
+      },
+    },
+  },
+  spacing: {
+    xs: '0.5rem',
+    sm: '0.75rem',
+    md: '1rem',
+    lg: '1.1rem',
+    xl: '1.2rem',
+  },
+}
+
+const defaultDarTheme: Theme = {
+  colors: {
+    main: {
+      bg: '#1f2937',
+      text: '#f9fafb',
+    },
+
+    primaries: {
+      first: '#60A5FA',
       second: '#60a5fa',
     },
     secondaries: {
@@ -31,13 +69,17 @@ const defaultTheme: Theme = {
 
 const otherTheme: Theme = {
   colors: {
+    main: {
+      bg: 'white',
+      text: '#1f2937',
+    },
     primaries: {
-      first: '#22c55e',
-      second: '#4ade80',
+      first: '#4ade80',
+      second: '#86efac',
     },
     secondaries: {
-      first: '#8b5cf6',
-      second: '#a78bfa',
+      first: '#c084fc',
+      second: '#d8b4fe',
     },
     nested: {
       one: {
@@ -58,10 +100,13 @@ const otherTheme: Theme = {
   },
 }
 
-const themes: Record<ThemeValue, Theme> = {
+const themes = {
   default: defaultTheme,
+  defaultDark: defaultDarTheme,
   other: otherTheme,
 }
+
+type ThemeValue = keyof typeof themes
 
 export { themes }
 export type { Theme, ThemeValue }

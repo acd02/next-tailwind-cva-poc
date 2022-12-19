@@ -10,18 +10,18 @@ const button = cva(
   {
     variants: {
       disabled: {
-        true: 'disabled:cursor-not-allowed disabled:opacity-70',
+        true: ['opacity-50', 'cursor-not-allowed'],
       },
       intent: {
         primary: [
           'bg-primaries-first',
-          'text-white',
+          'text-main-text',
           'border-transparent',
           'hover:bg-primaries-second',
         ],
         secondary: [
           'bg-secondaries-first',
-          'text-gray-100',
+          'text-main-text',
           'border-transparent',
           'hover:bg-secondaries-second',
         ],
@@ -41,7 +41,7 @@ const button = cva(
         intent: 'primary',
         size: 'small',
         disabled: true,
-        className: 'border-4 border-black',
+        className: 'border-4 border-pink-500',
       },
     ],
   }

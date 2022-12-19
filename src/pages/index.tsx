@@ -37,7 +37,7 @@ function Home() {
 const Components = {
   Section: ({ children, label }: PropsWithChildren<{ label: string }>) => (
     <div>
-      <p className="text-2xl font-bold text-gray-600">{label}</p>
+      <p className="mb-2 text-2xl font-bold text-main-text">{label}</p>
       <div className="flex items-end gap-md">{children}</div>
     </div>
   ),

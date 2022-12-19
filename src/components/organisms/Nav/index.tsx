@@ -1,6 +1,7 @@
 import cx from 'classcat'
 import { ChangeEvent, memo } from 'react'
 import { ThemeValue } from 'src/themes'
+import { objectKeys } from 'utils/object'
 
 function NavContent() {
   function handleSelect(e: ChangeEvent<HTMLSelectElement>) {
@@ -8,9 +9,16 @@ function NavContent() {
 
     const value = e.target.value as ThemeValue
     const documentElm = document.documentElement
+    const themeValues: Record<ThemeValue, ThemeValue> = {
+      default: 'default',
+      defaultDark: 'defaultDark',
+      other: 'other',
+    }
 
-    if (value === 'other') documentElm.classList.add('other')
-    else documentElm.classList.remove('other')
+    objectKeys(themeValues).forEach(themeKey => {
+      if (themeKey === value && value !== 'default') documentElm.classList.add(themeKey)
+      else documentElm.classList.remove(themeKey)
+    })
   }
 
   return (
@@ -18,7 +26,7 @@ function NavContent() {
       <div className="mx-auto max-w-xs">
         <label
           htmlFor="theme"
-          className="block text-left text-sm font-bold text-gray-700"
+          className="block text-left text-sm font-bold text-main-text"
         >
           Switch theme
         </label>
@@ -34,8 +42,9 @@ function NavContent() {
             'focus:border-indigo-500 focus:outline-none focus:ring-indigo-500',
           ])}
         >
-          <option value="other">Other Theme</option>
           <option value="default">Default Theme</option>
+          <option value="defaultDark">Default Dark Theme</option>
+          <option value="other">Other Theme</option>
         </select>
       </div>
     </nav>

@@ -7,6 +7,10 @@ export type Theme = {
     xl: string
   }
   colors: {
+    main: {
+      bg: string
+      text: string
+    }
     primaries: {
       first: string
       second: string
@@ -26,5 +30,3 @@ export type Theme = {
     }
   }
 }
-
-export type ThemeValue = 'default' | 'other'
