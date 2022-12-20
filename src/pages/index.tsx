@@ -78,7 +78,7 @@ const Components = {
 }
 
 ;(Home as NextPageWithLayout<unknown>).getLayout = page => (
-  <MainLayout title="app" description="home">
+  <MainLayout title="tailwind x cva POC" description="tailwind x cva POC">
     {page}
   </MainLayout>
 )

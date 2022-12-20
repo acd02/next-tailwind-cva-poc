@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs'
+import { appendFileSync } from 'fs'
 import { join } from 'path'
 
 import { themes } from './src/themes/index'
@@ -41,8 +41,8 @@ function flattenTheme(theme: Theme, className: string): FlattenedTheme {
   }
 }
 
-function syncWriteFile(filename: string, data: string) {
-  writeFileSync(join(__dirname, filename), data, {
+function appendWriteFile(filename: string, data: string) {
+  appendFileSync(join(__dirname, filename), data, {
     flag: 'w',
   })
 }
@@ -56,8 +56,20 @@ const stringifiedThemes = objectKeys(themes).map(key => {
   const { className, ...rest } = flattenTheme(themes[key], key)
 
   return key === 'default'
-    ? `:root { ${stringifiedTheme(rest)} }`
-    : `.${className} { ${stringifiedTheme(rest)} }`
+    ? `:root{${stringifiedTheme(rest)}}`
+    : `.${className}{${stringifiedTheme(rest)}}`
 })
 
-syncWriteFile('./public/theme.css', `@layer base { ${stringifiedThemes.join(' ')} }`)
+appendWriteFile(
+  './src/css/tailwind.css',
+  `
+  /* purgecss start ignore */
+  @import 'tailwindcss/base';
+  @import 'tailwindcss/components';
+  /* purgecss end ignore */
+
+  @import 'tailwindcss/utilities';
+
+  @layer base {${stringifiedThemes.join('')}}
+`
+)

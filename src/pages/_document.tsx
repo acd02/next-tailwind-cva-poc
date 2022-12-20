@@ -6,7 +6,6 @@ export default function Document() {
       <Head>
         <link rel="stylesheet" type="text/css" href="/nprogress.css" />
         <link rel="stylesheet" type="text/css" href="/reset.css" />
-        <link rel="stylesheet" type="text/css" href="/theme.css" />
       </Head>
       <body className="bg-main-bg">
         {/* see: https://stackoverflow.com/questions/48516766/css-doesnt-block-rendering-on-firefox-quantum */}
