@@ -4,14 +4,18 @@ import { MainLayout } from 'components/layouts/Main'
 import type { NextPageWithLayout } from 'global-next'
 import type { PropsWithChildren } from 'react'
 
+const arr = Array.from({ length: 500 }).map((_, index) => index)
+
 function Home() {
   return (
     <div className="mx-auto grid max-w-5xl justify-center gap-y-10">
-      <Components.Section label="Primary buttons:">
-        <Button>small button</Button>
-        <Button size="medium">medium button</Button>
-        <Button size="large">large button</Button>
-      </Components.Section>
+      {arr.map(index => (
+        <Components.Section key={index} label={`Primary buttons: ${index}`}>
+          <Button>small button</Button>
+          <Button size="medium">medium button</Button>
+          <Button size="large">large button</Button>
+        </Components.Section>
+      ))}
 
       <Components.Section label="Secondary buttons:">
         <Button intent="secondary">small button</Button>

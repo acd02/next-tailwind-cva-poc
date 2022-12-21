@@ -41,13 +41,11 @@ const SelectContent = ({
 const SelectItem = ({
   children,
   disabled,
-  key,
   value,
 }: ComponentProps<typeof SelectPrimitive['Item']>) => {
   return (
     <SelectPrimitive.Item
       disabled={disabled}
-      key={key}
       value={value}
       className={cx([
         'relative flex items-center rounded-md px-8 py-2 text-sm font-medium text-gray-700 focus:bg-gray-100',
